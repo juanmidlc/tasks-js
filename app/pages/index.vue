@@ -1,39 +1,25 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        Nuxt-template
-      </h1>
-      <h2 class="subtitle">
-        My laudable Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
-    </div>
+  <div>
+    <CategoryForm />
+    <SessionForm />
+    <TaskForm />
+    <ProfileForm />
   </div>
 </template>
-
 <script>
-import Logo from '~/components/Logo.vue'
-
+import CategoryForm from '~/components/categories/CategoryForm.vue'
+import SessionForm from '~/components/sessions/SessionForm.vue'
+import TaskForm from '~/components/tasks/TaskForm.vue'
+import ProfileForm from '~/components/profiles/ProfileForm.vue'
 export default {
   components: {
-    Logo
+    CategoryForm,
+    SessionForm,
+    TaskForm,
+    ProfileForm
   }
 }
 </script>
-
 <style>
 .container {
   margin: 0 auto;

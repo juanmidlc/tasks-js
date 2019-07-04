@@ -3,6 +3,9 @@ const i18n = require('./i18n')
 module.exports = {
   srcDir: 'app/',
   mode: 'universal',
+  server: {
+    port: 8080
+  },
   env: {
     PRISMIC_ENDPOINT: 'https://def-nuxt-template.cdn.prismic.io/api/v2'
   },
@@ -19,13 +22,13 @@ module.exports = {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
-    title: process.env.npm_package_name || ''
+    title: 'TASK js'
   },
 
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#000' },
 
   /*
   ** Global CSS

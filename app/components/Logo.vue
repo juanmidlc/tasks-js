@@ -1,13 +1,24 @@
 <template>
   <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two" />
+    <!-- <div class="Triangle Triangle--two" />
     <div class="Triangle Triangle--one" />
     <div class="Triangle Triangle--three" />
-    <div class="Triangle Triangle--four" />
+    <div class="Triangle Triangle--four" /> -->
+    <h1>{{ message }} o/</h1>
   </div>
 </template>
-
-<style>
+<script>
+export default {
+  props: {
+    message: {
+      default: 'Hola por defecto',
+      required: false,
+      type: String
+    }
+  }
+}
+</script>
+<style lang="scss" scoped>
 .VueToNuxtLogo {
   display: inline-block;
   animation: turn 2s linear forwards 1s;
