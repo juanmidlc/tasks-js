@@ -45,6 +45,7 @@ section {
   &__inputarea {
     height: 60%;
     align-self: center;
+    border-radius: 100px;
   }
   &__button {
     background-color: $navypurple;

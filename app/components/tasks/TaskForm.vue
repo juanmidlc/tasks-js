@@ -1,6 +1,6 @@
 <template>
   <section class="TaskForm">
-    <h4 class="TaskForm__tittle">¡Crea una nueva tarea!</h4>
+    <h4>¡Crea una nueva tarea!</h4>
     <form class="TaskForm__form">
       <div class="TaskForm__field">
         <label class="TaskForm__label" for="task-name">Nombre: </label>
@@ -69,6 +69,7 @@ export default {
   &__input {
     height: 50%;
     align-self: center;
+    border-radius: 100px;
   }
   &__textarea {
     align-self: center;
@@ -76,6 +77,7 @@ export default {
   &__select {
     height: 60%;
     align-self: center;
+    border-radius: 60px;
   }
   &__color {
     align-self: center;
@@ -83,8 +85,9 @@ export default {
   &__date{
     height: 60%;
     align-self: center;
+    border-radius: 70px;
   }
-   &__button {
+  &__button {
     background-color: $hanpurple;
     color: $black;
     width: 20%;

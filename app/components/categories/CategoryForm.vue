@@ -41,9 +41,7 @@ export default {
   &__inputarea {
     height: 50%;
     align-self: center;
-  }
-  &colotextarea {
-    width: 25%;
+    border-radius: 100px;
   }
   &__button {
     background-color: $white;
