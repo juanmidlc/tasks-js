@@ -1,22 +1,49 @@
 <template>
   <section class="CategoryForm">
-    <h4 class="CategoryForm__tittle">¡Crea una nueva Categoría!</h4>
-    <form class="CategoryForm__form">
+    <h4 class="CategoryForm__tittle">
+      ¡Crea una nueva Categoría!
+    </h4>
+    <form
+      class="CategoryForm__form"
+      @submit.prevent="save"
+      novalidate>
       <div class="CategoryForm__field">
-        <label class="CategoryForm__label" for="category-name">Dale un nombre a tu nueva categoría: </label>
-        <input id="category-name" class="CategoryForm__inputarea" type="text" name="name">
+        <label
+          class="CategoryForm__label"
+          for="category-name">
+          Dale un nombre a tu nueva categoría:
+        </label>
+        <input
+          id="category-name"
+          v-model="category.name"
+          class="CategoryForm__inputarea"
+          type="text"
+          name="name">
       </div>
       <div class="CategoryForm__field">
         <label class="CategoryForm__label" for="category-description">Colócale una descripción:</label>
-        <textarea id="category-description" class="CategoryForm__textarea" name="desctiption" />
+        <textarea
+          id="category-description"
+          v-model="category.description"
+          class="CategoryForm__textarea"
+          name="desctiption" />
       </div>
-      <button class="CategoryForm__button" type="button">Crear</button>
+      <input class="CategoryForm__button" type="submit" value="Crear"/>
     </form>
   </section>
 </template>
 <script>
 export default {
-
+  data() {
+    return {
+      category: {}
+    }
+  },
+  methods: {
+    async save() {
+      await this.$store.dispatch('categories/create', this.category)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -44,13 +71,11 @@ export default {
     border-radius: 100px;
   }
   &__button {
-    background-color: $white;
-    color: $navypurple;
+    @include button($white, $navypurple);
+
     width: 20%;
     max-width: 25%;
     align-self: flex-end;
-    border-radius: 116px;
-    border: 3px solid $navypurple;
   }
 }
 </style>
