@@ -1,9 +1,9 @@
 <template>
   <div class="container ViewTaskForm">
     <section>
-      <h5 class="ViewTaskForm__tittle">
+      <label class="ViewTaskForm__tittle">
         Tareas
-      </h5>
+      </label>
       <div class="triangulo"></div>
       <div class="rombo"></div>
       <div class="circulo"></div>
@@ -15,7 +15,7 @@
       <div class="rectangulo-1-inv"></div>
       <br>
       <form>
-        <h6>Hoy</h6>
+        <label class="ViewTaskForm__day">Hoy</label>
         <table class="egt row">
           <tr>
             <th>Hola</th>
@@ -46,7 +46,7 @@
             </td>
           </tr>
         </table>
-        <h6>Mañana</h6>
+        <label class="ViewTaskForm__day">Mañana</label>
         <table class="egt row">
           <tr>
             <th>Hola</th>
@@ -106,8 +106,8 @@ export default {
 &__tittle {
   border-bottom: 1px solid #4315A9;
   font-family: 'RNS Sanz, ExtaBold';
-  display: flex;
-  align-self: flex-start;
+  font-size: 32px;
+  color: #8650FF;
 }
 &__row {
   background-color: #FFFFFF;
@@ -115,18 +115,26 @@ export default {
 &__name {
   color: #514A66;
   font-family: 'Noirden, Bold';
+  font-size: 14px;
 }
 &__description {
   color: #514A66;
   font-family: 'RNS Sanz, SemiBold';
+  font-size: 14px;
   opacity: 0.54;
 }
 &__time {
   color: #514A66;
   font-family: 'Noirden, Bold';
+  font-size: 14px;
 }
 &__column {
   max-width: 2%;
+}
+&__day {
+  font-family: 'Noirden, Bold';
+  color: #A19DAC;
+  font-size: 14px;
 }
 &__button {
   width: 78px;
@@ -163,7 +171,7 @@ th, td {
   top: 128px;
   right: 47px;
   transform: rotate(0deg);
-  z-index: 1;
+  z-index: 0;
 }
 .rombo {
   width: 71px;
@@ -174,7 +182,7 @@ th, td {
   position: fixed;
   top: 95.13px;
   right: -40px;
-  z-index: 1;
+  z-index: 0;
 }
 .rectangulo {
   width: 47px;
@@ -185,7 +193,7 @@ th, td {
   position: fixed;
   bottom: 25px;
   left: 42px;
-  z-index: 1;
+  z-index: 0;
 }
 .circulo {
     width: 74px;
@@ -198,7 +206,7 @@ th, td {
     position: fixed;
     bottom: -15px;
     left: -15px;
-    z-index: 1;
+    z-index: 0;
 }
 .rectangulo-1 {
   width: 41px;
