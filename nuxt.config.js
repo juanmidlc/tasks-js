@@ -54,6 +54,7 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources',
+    '@nuxtjs/svg-sprite',
     'nuxt-webfontloader',
     ['nuxt-i18n', i18n]
   ],

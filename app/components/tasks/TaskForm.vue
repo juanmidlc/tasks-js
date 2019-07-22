@@ -2,8 +2,8 @@
   <section class="TaskForm">
     <form
       class="TaskForm__form"
-      @submit.prevent="save"
-      novalidate>
+      novalidate
+      @submit.prevent="save">
       <div class="TaskForm__field">
         <label
           class="TaskForm__label"
@@ -49,13 +49,13 @@
         <label
           class="TaskForm__label">
           ¡Es hora que le des un color a tu nueva tarea! :
-          </label>
+        </label>
         <input
           v-model="task.color"
           class="TaskForm__color"
           type="color">
       </div>
- <!--     <div
+      <!--<div
         class="TaskForm__field">
         <label
           class="TaskForm__label">
@@ -83,7 +83,7 @@
           </option>
         </select>
       </div>
-   <!--<div class="TaskForm__field">
+      <!--<div class="TaskForm__field">
         <label class="TaskForm__label">¿A qué sesión pertenece tu tarea?</label>
         <select
           v-model="sessions"
@@ -97,8 +97,8 @@
         </select>
       </div> -->
       <div class="TaskForm__buttons">
-        <input class="TaskForm__button" type="submit" value="Cancelar"/>
-        <input class="TaskForm__button" type="submit" value="Guardar"/>
+        <input class="TaskForm__button" type="submit" value="Cancelar" />
+        <input class="TaskForm__button" type="submit" value="Guardar" />
       </div>
     </form>
   </section>
