@@ -7,7 +7,7 @@
 </template>
 <script>
 
-import ViewTaskForm from '~/components/tasks/ViewTask.vue'
+import ViewTaskForm from '~/components/tasks/TaskForm.vue'
 export default {
   components: {
     ViewTaskForm

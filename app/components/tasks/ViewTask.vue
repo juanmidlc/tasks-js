@@ -11,7 +11,7 @@
       <div class="rectangulo-1"></div>
       <div class="rectangulo-2"></div>
       <div class="rectangulo-3"></div>
-       <div class="rectangulo-2-inv"></div>
+      <div class="rectangulo-2-inv"></div>
       <div class="rectangulo-1-inv"></div>
       <br>
       <form>
@@ -78,7 +78,7 @@
           </tr>
         </table>
       </form>
-     <button class="ViewTaskForm__button" type="submit"> <svg-icon class="ViewTaskForm__icon" name="plus" /> </button>
+      <button class="ViewTaskForm__button" type="submit"> <svg-icon class="ViewTaskForm__icon" name="plus" /> </button>
     </section>
   </div>
 </template>
@@ -145,6 +145,7 @@ export default {
   position: fixed;
   bottom: 64px;
   right: 79px;
+  border: none;
 }
 &__icon {
   width: 22.23px;
