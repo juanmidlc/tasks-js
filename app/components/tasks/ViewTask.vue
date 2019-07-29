@@ -4,15 +4,15 @@
       <label class="ViewTaskForm__tittle">
         Tareas
       </label>
-      <div class="triangulo"></div>
-      <div class="rombo"></div>
-      <div class="circulo"></div>
-      <div class="rectangulo"></div>
-      <div class="rectangulo-1"></div>
-      <div class="rectangulo-2"></div>
-      <div class="rectangulo-3"></div>
-      <div class="rectangulo-2-inv"></div>
-      <div class="rectangulo-1-inv"></div>
+      <div class="triangulo" />
+      <div class="rombo" />
+      <div class="circulo" />
+      <div class="rectangulo" />
+      <div class="rectangulo-1" />
+      <div class="rectangulo-2" />
+      <div class="rectangulo-3" />
+      <div class="rectangulo-2-inv" />
+      <div class="rectangulo-1-inv" />
       <br>
       <form>
         <label class="ViewTaskForm__day">Hoy</label>
@@ -25,26 +25,10 @@
             <th>Hola</th>
             <th>Hola</th>
           </tr>
-          <tr v-for="task in tasks" :key="task.id" class="ViewTaskForm__row">
-            <td class="ViewTaskForm__column">
-              <input type="checkbox">
-            </td>
-            <td>
-              <h6 class="ViewTaskForm__name">{{ task.name }}</h6>
-            </td>
-            <td>
-              <input type="color">
-            </td>
-            <td>
-              <h6>{{ task.category_id }}</h6>
-            </td>
-            <td class="ViewTaskForm__description">
-              <h6>{{ task.description }}</h6>
-            </td>
-            <td class="ViewTaskForm__time">
-              <h6>{{ task.start_at }}</h6>
-            </td>
-          </tr>
+          <task-row
+            v-for="task in tasks"
+            :task="task"
+            :key="task.id"/>
         </table>
         <label class="ViewTaskForm__day">Mañana</label>
         <table class="egt row">
@@ -56,26 +40,10 @@
             <th>Hola</th>
             <th>Hola</th>
           </tr>
-          <tr v-for="task in tasks" :key="task.id" class="ViewTaskForm__row">
-            <td class="ViewTaskForm__column">
-              <input type="checkbox">
-            </td>
-            <td>
-              <h6 class="ViewTaskForm__name">{{ task.name }}</h6>
-            </td>
-            <td>
-              <input type="color">
-            </td>
-            <td>
-              <h6>{{ task.category_id }}</h6>
-            </td>
-            <td class="ViewTaskForm__description">
-              <h6>{{ task.description }}</h6>
-            </td>
-            <td class="ViewTaskForm__time">
-              <h6>{{ task.start_at }}</h6>
-            </td>
-          </tr>
+          <task-row
+            v-for="task in tasks"
+            :task="task"
+            :key="task.id"/>
         </table>
       </form>
       <button class="ViewTaskForm__button" type="submit"> <svg-icon class="ViewTaskForm__icon" name="plus" /> </button>
@@ -84,7 +52,12 @@
 </template>
 <script>
 import { mapState } from 'vuex'
+import TaskRow from './TaskRow'
+
 export default {
+  components: {
+    TaskRow
+  },
   data() {
     return {
       task: {}
@@ -108,28 +81,6 @@ export default {
   font-family: 'RNS Sanz, ExtaBold';
   font-size: 32px;
   color: #8650FF;
-}
-&__row {
-  background-color: #FFFFFF;
-}
-&__name {
-  color: #514A66;
-  font-family: 'Noirden, Bold';
-  font-size: 14px;
-}
-&__description {
-  color: #514A66;
-  font-family: 'RNS Sanz, SemiBold';
-  font-size: 14px;
-  opacity: 0.54;
-}
-&__time {
-  color: #514A66;
-  font-family: 'Noirden, Bold';
-  font-size: 14px;
-}
-&__column {
-  max-width: 2%;
 }
 &__day {
   font-family: 'Noirden, Bold';
