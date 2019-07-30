@@ -1,19 +1,19 @@
 <template>
   <tr class="TaskRow__row">
-    <td class="TaskRow__column">
+    <td>
       <input type="checkbox">
     </td>
-    <td>
+    <td class="TaskRow__widht">
       <h6 class="TaskRow__name">{{ task.name }}</h6>
     </td>
     <td>
       <div
-      class="TaskRow__color"
-      :style="bgcolor"
+        class="TaskRow__color"
+        :style="bgcolor"
       />
     </td>
     <td>
-      <h6>{{ task.category_id }}</h6>
+      <h6>{{ task.category.name }}</h6>
     </td>
     <td class="TaskRow__description">
       <h6>{{ task.description }}</h6>
@@ -44,8 +44,8 @@ export default {
 &__row {
   background-color: #FFFFFF;
 }
-&__column {
-  max-width: 2%;
+&__widht {
+  max-width: 150px;
 }
 &__name {
   color: #514A66;

@@ -16,34 +16,20 @@
       <br>
       <form>
         <label class="ViewTaskForm__day">Hoy</label>
-        <table class="egt row">
-          <tr>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-          </tr>
+        <table>
           <task-row
             v-for="task in tasks"
+            :key="task.id"
             :task="task"
-            :key="task.id"/>
+          />
         </table>
         <label class="ViewTaskForm__day">Mañana</label>
-        <table class="egt row">
-          <tr>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-            <th>Hola</th>
-          </tr>
+        <table>
           <task-row
             v-for="task in tasks"
+            :key="task.id"
             :task="task"
-            :key="task.id"/>
+          />
         </table>
       </form>
       <button class="ViewTaskForm__button" type="submit"> <svg-icon class="ViewTaskForm__icon" name="plus" /> </button>
@@ -105,12 +91,10 @@ export default {
   position: fixed;
   bottom: 91.07px;
   right: 106.73px;
-}
+}}
 table {
   width: 100%;
-}
-th, td {
-   max-width: 16.66%;
+  height: 100%;
 }
 .triangulo {
   width: 0;
@@ -215,5 +199,5 @@ th, td {
   right:212px;
   z-index: 0;
 }
-}
+
 </style>
