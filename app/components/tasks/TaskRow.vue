@@ -1,25 +1,28 @@
 <template>
   <tr class="TaskRow__row">
     <td>
-      <input type="checkbox">
+      <input class="TaskRow__check" type="checkbox">
     </td>
-    <td class="TaskRow__widht">
-      <h6 class="TaskRow__name">{{ task.name }}</h6>
+    <td class="TaskRow__name">
+      <label>{{ task.name }}</label>
     </td>
-    <td>
+    <td class="TaskRow__color">
       <div
-        class="TaskRow__color"
+        class="TaskRow__colordiv"
         :style="bgcolor"
       />
     </td>
-    <td>
-      <h6>{{ task.category.name }}</h6>
+    <td
+      class="TaskRow__category"
+      :style="colorc"
+      >
+      <label>{{ task.category.name }}</label>
     </td>
     <td class="TaskRow__description">
-      <h6>{{ task.description }}</h6>
+      <label>{{ task.description }}</label>
     </td>
     <td class="TaskRow__time">
-      <h6>{{ task.start_at }}</h6>
+      <label>{{ task.start_at }}</label>
     </td>
   </tr>
 </template>
@@ -35,6 +38,10 @@ export default {
     bgcolor() {
       const col = this.task.color
       return { backgroundColor: `#${col}` }
+    },
+    colorc() {
+      const col = this.task.color
+      return { color: `#${col}` }
     }
   }
 }
@@ -44,25 +51,41 @@ export default {
 &__row {
   background-color: #FFFFFF;
 }
-&__widht {
-  max-width: 150px;
+&__check {
+  width: 50px;
 }
 &__name {
   color: #514A66;
   font-family: 'Noirden, Bold';
   font-size: 14px;
+  width: 200px;
 }
 &__color {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  display: table-cell;
+  text-align: center;
+}
+&__colordiv {
   border-radius: 50%;
   box-sizing: border-box;
   width: 15px;
   height: 15px;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+&__category {
+  font-family: 'RNS Sanz, SemiBold';
+  font-size: 14px;
+  width: 180px;
 }
 &__description {
   color: #514A66;
+  opacity: 0.54;
   font-family: 'RNS Sanz, SemiBold';
   font-size: 14px;
-  opacity: 0.54;
+  width: 300px;
 }
 &__time {
   color: #514A66;

@@ -92,10 +92,6 @@ export default {
   bottom: 91.07px;
   right: 106.73px;
 }}
-table {
-  width: 100%;
-  height: 100%;
-}
 .triangulo {
   width: 0;
   height: 0;

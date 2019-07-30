@@ -1,8 +1,6 @@
 <template>
   <div>
-    <div>
-      <ViewTaskForm />
-    </div>
+    <ViewTaskForm />
   </div>
 </template>
 <script>
