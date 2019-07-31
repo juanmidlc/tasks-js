@@ -15,7 +15,7 @@
     <td
       class="TaskRow__category"
       :style="colorc"
-      >
+    >
       <label>{{ task.category.name }}</label>
     </td>
     <td class="TaskRow__description">
