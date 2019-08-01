@@ -1,5 +1,5 @@
 <template>
-  <div class="container perro">
+  <div class="container">
     <section class="TaskForm">
       <form
         novalidate
@@ -78,9 +78,23 @@
             name="star_at">
         </div>
         <br>
+        <div class="TaskForm__div">
+          <label
+            class="TaskForm__label"
+            for="task-color">
+            Elige un color para tu tarea:
+          </label>
+          <input
+            id="task-color"
+            v-model="task.color"
+            class="TaskForm__input"
+            type="color"
+            name="color">
+        </div>
+        <br>
         <div>
           <button class="TaskForm__button" type="button">Cancelar</button>
-          <button class="TaskForm__button-2" type="button">Guardar</button>
+          <button class="TaskForm__button-2" type="submit">Guardar</button>
       </div>
       </form>
     </section>
@@ -102,16 +116,17 @@ export default {
   },
   methods: {
     async save() {
-      await this.$store.dispatch('tasks/create', this.task)
+      try {
+        await this.$store.dispatch('tasks/create', this.task)
+        this.$emit('saved')
+      } catch {
+        window.showDialog('Ha ocurrido un error')
+      }
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.perro {
-  background-color:#000000;
-  opacity: 0.61;
-}
 .TaskForm {
   background-color: #FFFFFF;
 

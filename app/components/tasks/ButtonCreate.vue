@@ -1,12 +1,48 @@
 <template>
-  <button class="button" type="submit"> <svg-icon class="icon" name="plus" /> </button>
+  <div>
+    <transition name="modal">
+      <div v-if="isOpen">
+        <div class="overlay" @click.self="close()">
+          <slot/>
+        </div>
+      </div>
+    </transition>
+    <button @click="open()" class="button" type="submit">
+      <svg-icon class="icon" name="plus" />
+    </button>
+  </div>
 </template>
 <script>
 export default {
-
+  data: function () {
+    return {
+      isOpen: false
+    }
+  },
+  methods: {
+    open() {
+      this.isOpen = true
+    },
+    close() {
+      this.isOpen = false
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #00000094;
+  z-index: 999;
+  transition: opacity 0.2s ease;
+}
 .button {
   width: 78px;
   height: 78px;

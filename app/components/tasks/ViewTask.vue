@@ -9,7 +9,11 @@
       <task-table />
       <label class="ViewTaskForm__day">Mañana</label>
       <task-table />
-      <button-create />
+      <button-create
+        ref="form">
+        <task-form
+          @saved="close()"/>
+      </button-create>
     </section>
   </div>
 </template>
@@ -17,12 +21,19 @@
 import TaskTable from './TaskTable'
 import BackForms from './BackForms'
 import ButtonCreate from './ButtonCreate'
+import TaskForm from './TaskForm'
 
 export default {
   components: {
     TaskTable,
+    TaskForm,
     BackForms,
     ButtonCreate
+  },
+  methods: {
+    close() {
+      this.$refs.form.close()
+    }
   }
 }
 </script>

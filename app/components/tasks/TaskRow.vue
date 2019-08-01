@@ -37,11 +37,11 @@ export default {
   computed: {
     bgcolor() {
       const col = this.task.color
-      return { backgroundColor: `#${col}` }
+      return { backgroundColor: `${col}` }
     },
     colorc() {
       const col = this.task.color
-      return { color: `#${col}` }
+      return { color: `${col}` }
     }
   }
 }
